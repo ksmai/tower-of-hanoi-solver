@@ -23,13 +23,13 @@ if (isProd) {
   cssLoaders = ExtractTextPlugin.extract({
     fallback: 'style-loader',
     use: [
-      'postcss-loader',
       {
         loader: 'css-loader',
         options: {
           minimize: true,
         },
       },
+      'postcss-loader',
       'sass-loader',
     ],
   });
@@ -117,7 +117,7 @@ module.exports = {
       exclude: /node_modules/,
       use: 'babel-loader',
     }, {
-      test: /\.scss$/,
+      test: /\.s?css$/,
       use: cssLoaders,
     }],
   },
