@@ -92,7 +92,7 @@ module.exports = {
   devtool: isProd ? 'source-map' : 'cheap-module-eval-source-map',
 
   entry: {
-    main: main,
+    main: ['babel-polyfill', main],
   },
 
   output: {
